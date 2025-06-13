@@ -25,7 +25,7 @@ const generateAccessTokenAndRefreshToken = async(userId) => {
    
 }
 const registerUser = AsyncHandler( async (req, res) => {
-    // console.log(req.body)
+    console.log(req.body)
     const {fullName, email, username, password} =req.body
     // check if all fields are filled
     if([fullName, email, username, password].some((field) => field?.trim === "")) {
@@ -37,6 +37,7 @@ const registerUser = AsyncHandler( async (req, res) => {
             {username},
             {email}]
     })
+    
     // validate if already exists
     // console.log(req.files.avatar[0])
     if(existedUser) {
